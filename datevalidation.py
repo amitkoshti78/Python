@@ -20,17 +20,19 @@ def date_validation(day_i, month_i, yyyy_i):
     if month_i < 1  or month_i > 12 :
         return f'Month {month_i} is invalid'
   
+    
+
+    if month_i == 4 or month_i == 6 or month_i == 9 or month_i == 11 :
+        month_end_day = 30
+    else:
+        month_end_day = 31
+
     if month_i == 2 :
         month_end_day = leap_year(yyyy_i)
         if month_end_day == 29 :
             print(f'Year {yyyy_i} is a leap year')
         else:
            print(f'Year {yyyy_i} is a not leap year') 
-
-    elif month_i == 4 or month_i == 6 or month_i == 9 or month_i == 11 :
-        month_end_day = 30
-    else:
-        month_end_day = 31
 
     if day_i <= month_end_day and day_i > 0 :
         return f'Date {day_i}/{month_i}/{yyyy_i}  is valid'
