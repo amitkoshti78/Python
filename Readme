@@ -1,0 +1,19 @@
+ Command to recover Git files
+ delete mode 100644 Stringmanipulation.py
+ delete mode 100644 Strings.py
+ delete mode 100644 calculator.py
+ delete mode 100644 copypaste.py
+ delete mode 100644 datevalidation.py
+ delete mode 100644 numberinwords.py
+ delete mode 100644 sourcecode.py
+ delete mode 100644 string addrerss.py
+ delete mode 100644 stringpallindrome.py
+ delete mode 100644 test.py
+
+git rev-list -n 1 HEAD -- Stringmanipulation.py
+
+git checkout 54a776a23e621b9e9f02f74b10b6f9fd380ad049^ -- Stringmanipulation.py
+
+git rev-list -n 1 HEAD -- "string addrerss.py"
+
+git checkout b2957e938063fda31ec8e77fd909f5cf55ee88f2^ -- "string addrerss.py"
