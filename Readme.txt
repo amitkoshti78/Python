@@ -54,6 +54,14 @@ git push origin release_1
 to list the files in git 
 git ls-files
 
+to remove the files 
+git rm filename
+
+to rename the file
+git mv oldname newname
+
+
+
 
 
 
