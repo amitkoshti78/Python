@@ -42,6 +42,17 @@ git checkout main
 to pull the changes done on Github like merging the brnaches 
 git pull origin release_1
 
+to stage the changes 
+git add filename
+
+to commit the changes to staged file
+git commit -m "message"
+
+to push the changes to github
+git push origin release_1
+
+
+
 
 
 
