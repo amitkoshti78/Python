@@ -51,7 +51,8 @@ git commit -m "message"
 to push the changes to github
 git push origin release_1
 
-
+to list the files in git 
+git ls-files
 
 
 
