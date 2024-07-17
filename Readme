@@ -39,6 +39,11 @@ git push -u origin release_1
 to switch to existing branch
 git checkout main
 
+to pull the changes done on Github like merging the brnaches 
+git pull origin release_1
+
+
+
 
 
 
