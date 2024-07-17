@@ -60,6 +60,15 @@ git rm filename
 to rename the file
 git mv oldname newname
 
+to ignore files or directories
+create file .gitignore
+and add file names to be ignored to it
+
+to delete the branch 
+git branch -d branchname
+
+to delete the file or directory recurrsively from staging area without removing from local disk
+git rm --cached -r foldername/   or git rm --cached -r filename
 
 
 
