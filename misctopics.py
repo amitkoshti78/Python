@@ -1,9 +1,10 @@
-import random
+
 
 #to multiply string number of times
 for i in range(1,6):
     print(i, (i * "#"))
 
+import random
 # Randoum choice from a list
 my_list = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN"]
 print(random.choice(my_list))
@@ -75,8 +76,6 @@ print(topper_list)
 print(topper_list1)
 
 
-
-
 # Program to illustrate if else statements
 print("Welcome to the rollercoaster!")
 height = int(input("What is your height in cm? "))
@@ -106,57 +105,60 @@ else:
 
 
 # game
-  
-# Rock beats scissors, scissors beat paper, and paper beats rock
+# Rock beats scissors, paper beats rock and scissors beat paper.
   
 #  rock = 0
-#  scissors = 1
-#  paper = 2
+#  paper = 1
+#  scissors = 2
 
-# user   computer
-#  0      0                        
-#  0      1  
-#  0      2           
-#  1      0
-#  1      1 
+# user   computer  result
+#  0      0        draw  
+#  1      1        draw    
+#  2      2        draw             
 
-#  2      0       
-  
+#  0      2        user   Rock beats scissors
 
-         
+#  1      0        user   paper beats rock
+#  2      1        user   scissors beat paper
+
+#  2      0        computer Rock beats scissors
+
+#  0      1        computer paper beats rock
+#  1      2        computer scissors beat paper 
 
 import random
 
 rock = '''
-    _______
----'   ____)
-      (_____)
-      (_____)
+    ______
+---'   ___)
       (____)
----.__(___)
+rock  (____)
+      (___)
+---.__(__)
 '''
 
 paper = '''
-    _______
----'   ____)____
-          ______)
+    ________
+---'   _____)____
           _______)
-         _______)
----.__________)
+paper     ________)
+         ________)
+---.___________)
 '''
 
 scissors = '''
     _______
----'   ____)____
-          ______)
-       __________)
-      (____)
----.__(___)
+---'   ____)_____
+          _______)__
+ scissor____________)
+      (_____)
+---.__(____)
 '''
 
 game_images = [rock, paper, scissors]
 
 user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
+print("Your chose:")
 print(game_images[user_choice])
 
 computer_choice = random.randint(0, 2)
@@ -166,15 +168,15 @@ print(game_images[computer_choice])
 if user_choice >= 3 or user_choice < 0: 
   print("You typed an invalid number, you lose!") 
 elif user_choice == 0 and computer_choice == 2:
-  print("You win!")
+  print("You win!! Rock beats scissors")
 elif computer_choice == 0 and user_choice == 2:
-  print("You lose")
+  print("You lose!! Rock beats scissors")
 elif computer_choice > user_choice:
-  print("You lose")
+  print("You lose!! paper beats rock or scissors beat paper")
 elif user_choice > computer_choice:
-  print("You win!")
+  print("You win!! paper beats rock or scissors beat paper")
 elif computer_choice == user_choice:
-  print("It's a draw")
+  print("It's a draw!! Same Choice")
 
 
 
