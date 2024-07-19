@@ -17,25 +17,48 @@ def date_validation(day_i, month_i, yyyy_i):
     if yyyy_i < 1 :
         return f'Year {yyyy_i} is invalid'
 
-    if month_i < 1  or month_i > 12 :
-        return f'Month {month_i} is invalid'
+    # if month_i < 1  or month_i > 12 :
+        # return f'Month {month_i} is invalid'
   
-    if month_i == 2 :
-        month_end_day = leap_year(yyyy_i)
-        if month_end_day == 29 :
-            print(f'Year {yyyy_i} is a leap year')
-        else:
-           print(f'Year {yyyy_i} is a not leap year') 
+    # if month_i == 2 :
+    #     month_end_day = leap_year(yyyy_i)
+    #     if month_end_day == 29 :
+    #         print(f'Year {yyyy_i} is a leap year')
+    #     else:
+    #        print(f'Year {yyyy_i} is a not leap year') 
 
-    elif month_i == 4 or month_i == 6 or month_i == 9 or month_i == 11 :
-        month_end_day = 30
-    else:
-        month_end_day = 31
+    # elif month_i == 4 or month_i == 6 or month_i == 9 or month_i == 11 :
+    #     month_end_day = 30
+    # else:
+    #     month_end_day = 31
 
-    if day_i <= month_end_day and day_i > 0 :
+    # if day_i <= month_end_day and day_i > 0 :
+    #     return f'Date {day_i}/{month_i}/{yyyy_i}  is valid'
+    # else:
+    #     return f'Day {day_i} is invalid'
+    
+    # match case statement to determine end of month
+    match month_i:
+        case 2:
+            month_end_day = leap_year(yyyy_i)
+            if month_end_day == 29 :
+                print(f'Year {yyyy_i} is a leap year')
+            else:
+                print(f'Year {yyyy_i} is a not leap year') 
+        case 4 | 6 | 9 | 11 :
+            month_end_day = 30
+        
+        case 1 | 3 | 5 | 7 | 8 | 10 | 12 :
+            month_end_day = 31
+        
+        case _ :
+            return f'Month {month_i} is invalid'
+    
+    # Day must be greater than 0 and less than month end day   
+    if day_i > 0  and day_i <= month_end_day :
         return f'Date {day_i}/{month_i}/{yyyy_i}  is valid'
     else:
-        return f'Day {day_i} is invalid'
+        return f'Day {day_i} is invalid'       
     
 def main():
 

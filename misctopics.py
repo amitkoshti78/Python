@@ -4,22 +4,6 @@
 for i in range(1,6):
     print(i, (i * "#"))
 
-import random
-# Randoum choice from a list
-my_list = ["ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE", "TEN"]
-print(random.choice(my_list))
-
-# for else construct and random number
-for i in range(1, 4, 1):
-    random_num = random.randint(0,50)
-    print("Attempt" , i, ("." * i))
-    guess_num = int(input("Enter a number to guess (0 to 50) : "))
-    if random_num == guess_num:
-        print("Your guess is correct!! You won")
-        break
-else:
-    print("Attempts over!! Your guess is wrong!! You Lost. Winning number is", random_num )
-
 
 # nested loops
 for x in range(0,5):
@@ -30,8 +14,6 @@ for x in range(0,5):
 letter_list = ["A", "B", "C", "D"]
 number_list = [1, 2, 3, 4]
 repeat_list = [0] * 5
-
-
 
 final_list = letter_list + number_list + repeat_list
 print(final_list)
@@ -76,114 +58,5 @@ print(topper_list)
 print(topper_list1)
 
 
-# Program to illustrate if else statements
-print("Welcome to the rollercoaster!")
-height = int(input("What is your height in cm? "))
-bill = 0
-
-if height >= 120:
-  print("You can ride the rollercoaster!")
-  age = int(input("What is your age? "))
-  if age < 12:
-    bill = 5
-    print("Child tickets are $5.")
-  elif age <= 18:
-    bill = 7
-    print("Youth tickets are $7.")
-  else:
-    bill = 12
-    print("Adult tickets are $12.")
-  
-  wants_photo = input("Do you want a photo taken? Y or N. ")
-  if wants_photo == "Y":
-    bill += 3
-  
-  print(f"Your final bill is ${bill}")
-
-else:
-  print("Sorry, you have to grow taller before you can ride.")
-
-
-# game
-# Rock beats scissors, paper beats rock and scissors beat paper.
-  
-#  rock = 0
-#  paper = 1
-#  scissors = 2
-
-# user   computer  result
-#  0      0        draw  
-#  1      1        draw    
-#  2      2        draw             
-
-#  0      2        user   Rock beats scissors
-
-#  1      0        user   paper beats rock
-#  2      1        user   scissors beat paper
-
-#  2      0        computer Rock beats scissors
-
-#  0      1        computer paper beats rock
-#  1      2        computer scissors beat paper 
-
-import random
-
-rock = '''
-    ______
----'   ___)
-      (____)
-rock  (____)
-      (___)
----.__(__)
-'''
-
-paper = '''
-    ________
----'   _____)____
-          _______)
-paper     ________)
-         ________)
----.___________)
-'''
-
-scissors = '''
-    _______
----'   ____)_____
-          _______)__
- scissor____________)
-      (_____)
----.__(____)
-'''
-
-game_images = [rock, paper, scissors]
-
-user_choice = int(input("What do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors.\n"))
-print("Your chose:")
-print(game_images[user_choice])
-
-computer_choice = random.randint(0, 2)
-print("Computer chose:")
-print(game_images[computer_choice])
-
-if user_choice >= 3 or user_choice < 0: 
-  print("You typed an invalid number, you lose!") 
-elif user_choice == 0 and computer_choice == 2:
-  print("You win!! Rock beats scissors")
-elif computer_choice == 0 and user_choice == 2:
-  print("You lose!! Rock beats scissors")
-elif computer_choice > user_choice:
-  print("You lose!! paper beats rock or scissors beat paper")
-elif user_choice > computer_choice:
-  print("You win!! paper beats rock or scissors beat paper")
-elif computer_choice == user_choice:
-  print("It's a draw!! Same Choice")
-
-
-
-# functuion parameters and scope of variables, enumerate, tuples, boolean operations, __main__ , isdigit, not operator, 
-
-#fizz buzz 
-# if input is divisible by 3 then print fizz
-# if input is divisible by 5 then print buzz
-# if input is divisible by 3 and 5 then print fizzbuzz
-# if input is not divisible by 3 and 5 then print blabla           
+# functuion parameters and scope of variables, enumerate, tuples, 
+# boolean operations, __main__ , isdigit, not operator
