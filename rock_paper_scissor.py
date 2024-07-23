@@ -1,5 +1,5 @@
-# game
-# Rock beats scissors, paper beats rock and scissors beat paper.
+''' game
+Rock beats scissors, paper beats rock and scissors beat paper.'''
   
 #  rock = 0
 #  paper = 1
@@ -10,20 +10,21 @@
 #  1      1        draw    
 #  2      2        draw             
 
-#  0      2        user   Rock beats scissors
+#  0      2        user wins   Rock beats scissors
 
-#  1      0        user   paper beats rock
-#  2      1        user   scissors beat paper
+#  1      0        user wins  paper beats rock
+#  2      1        user wins   scissors beat paper
 
-#  2      0        computer Rock beats scissors
+#  2      0        computer wins Rock beats scissors
 
-#  0      1        computer paper beats rock
-#  1      2        computer scissors beat paper 
+#  0      1        computer wins paper beats rock
+#  1      2        computer wins scissors beat paper 
 
 import random
 
+
 rock = '''
-   ______
+   ______  
 ---'   ___)
       (____)
 rock  (____)
@@ -63,13 +64,13 @@ while True:
     if user_choice >= 3 or user_choice < 0: 
         print("You typed an invalid number, you lose!") 
     elif user_choice == 0 and computer_choice == 2:
-        print("You win!! Rock beats scissors")
+        print("You win!! Computer lost Rock beats scissors")
     elif computer_choice == 0 and user_choice == 2:
-        print("You lose!! Rock beats scissors")
+        print("You lost Computer wins!! Rock beats scissors")
     elif computer_choice > user_choice:
-        print("You lose!! paper beats rock or scissors beat paper")
+        print("You lost!! Computer wins paper beats rock or scissors beat paper")
     elif user_choice > computer_choice:
-        print("You win!! paper beats rock or scissors beat paper")
+        print("You win!! Computer lost paper beats rock or scissors beat paper")
     elif computer_choice == user_choice:
         print("It's a draw!! Same Choice")
     

@@ -73,15 +73,26 @@ print(topper_list1)
 
 print("\n")
 number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
-print("Number occurs " , number_list.count(4), "times")
-unique_list = []
+print("Number 4 occurs " , number_list.count(4), "times")
+
+# to eliminate duplicates from the list
+number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
+# empty list to hold unique numbers, initially empty
+unique_list = []  
+
+# for loop to iterate through number_list one element at a time
+# number variable will hold 1 number at a time from number_list
+# checking if number is already exists in unique_list
+# if number is not presnet in unique_list it will be appended to the list
+# and if number is not presnet in unique_listnumber, it will be ignored 
 
 for number in number_list:
-    if number not in unique_list:
+    if number not in unique_list: 
       unique_list.append(number)
 
 print(unique_list)
 
+# sorted is a in built function to sort the list in ascending or descending order
 print("\n")
 number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
 sorted_list = sorted(number_list)
@@ -96,8 +107,9 @@ print(sorted_list)
 print("\n")
 number_tuple = (3, 6, 7, 8, 9, 1, 5)
 print("Tuple : " , number_tuple)
-x,y,*z = number_tuple
-print(x, y, z)
+a,y,*other,z,v  = number_tuple
+print(a,y,z,v) 
+
 
 #sets in python : sets are unordered list of items and we can not have duplicates in it
 number_list1 = [1, 4, 2, 3, 4, 5, 3, 4, 1]
