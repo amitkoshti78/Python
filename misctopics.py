@@ -69,6 +69,7 @@ print(topper_list1)
 
 # functuion parameters and scope of variables, enumerate, tuples, 
 # boolean operations, __main__ , isdigit, not operator, lambda, regular expressions, sys.argv
+# packages and functions like random, math, sort
 
 print("\n")
 number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
@@ -81,9 +82,33 @@ for number in number_list:
 
 print(unique_list)
 
+print("\n")
+number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
+sorted_list = sorted(number_list)
+print(sorted_list)
+sorted_list = sorted(number_list, reverse=True)
+print(sorted_list)
+
+
 
 # tuple are immutable means so we can not add or remove or modify items in the tuple
 
 print("\n")
 number_tuple = (3, 6, 7, 8, 9, 1, 5)
 print(number_tuple)
+x,y,*z = number_tuple
+print(x, y, z)
+
+#sets in python
+number_list1 = [1, 4, 2, 3, 4, 5, 3, 4, 1]
+set1 = set(number_list1)
+print(set1)
+number_list2 = [3, 6, 7, 8, 9, 1, 5]
+set2 = set(number_list2)
+
+print(set1 | set2)
+print(set1 & set2)
+print(set1 - set2)
+
+
+
