@@ -109,7 +109,12 @@ number_tuple = (3, 6, 7, 8, 9, 1, 5)
 print("Tuple : " , number_tuple)
 a,y,*other,z,v  = number_tuple
 print(a,y,z,v) 
+a = number_tuple[0]
+print("Value in a is " , a)
 
+print(f'\n Index  Value ')
+for index, number in enumerate(number_tuple):
+    print(f'   {index}      {number}')
 
 #sets in python : sets are unordered list of items and we can not have duplicates in it
 number_list1 = [1, 4, 2, 3, 4, 5, 3, 4, 1]
