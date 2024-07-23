@@ -69,7 +69,7 @@ print(topper_list1)
 
 # functuion parameters and scope of variables, enumerate, tuples, 
 # boolean operations, __main__ , isdigit, not operator, lambda, regular expressions, sys.argv
-# packages and functions like random, math, sort
+# packages and functions like random, math, sort, map and filter function of lambda
 
 print("\n")
 number_list = [1, 4, 2, 3, 4, 5, 3, 4, 1]
@@ -95,20 +95,25 @@ print(sorted_list)
 
 print("\n")
 number_tuple = (3, 6, 7, 8, 9, 1, 5)
-print(number_tuple)
+print("Tuple : " , number_tuple)
 x,y,*z = number_tuple
 print(x, y, z)
 
-#sets in python
+#sets in python : sets are unordered list of items and we can not have duplicates in it
 number_list1 = [1, 4, 2, 3, 4, 5, 3, 4, 1]
 set1 = set(number_list1)
-print(set1)
+print("\n")
+print("Set1 : ", set1)
 number_list2 = [3, 6, 7, 8, 9, 1, 5]
 set2 = set(number_list2)
+print("Set2 : ", set2)
 
-print(set1 | set2)
-print(set1 & set2)
-print(set1 - set2)
+
+print("\n")
+print("Union of set : " , set1 | set2)
+print("Common Items in set i.e. Intersection : ",  set1 & set2)
+print("Difference of set : " , set1 - set2)
+print("Present in one but not in other : " , set1 ^ set2)
 
 
 
