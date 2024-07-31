@@ -1,4 +1,4 @@
-# Python Program to create list, list of lists (matrix), tuple, set, and dictionary using for loops
+# Python Program to create list, list of lists (matrix), tuple, set, and dictionary #using for loops
 
 # 1. Creating a List using a for loop
 # A list is an ordered collection of items. Here, we'll create a list of square numbers.
@@ -9,7 +9,8 @@ for i in range(1, 6):  # range(1, 6) generates numbers from 1 to 5
 print("List of squares:", squares_list)
 
 # 2. Creating a List of Lists (Matrix) using nested for loops
-# A matrix is a 2D array, where each element is a list (row) containing other lists (columns).
+# A matrix is a 2D array, where each element is a list (row) containing other lists ###
+# (columns).
 matrix = []
 for i in range(3):  # 3 rows
     row = []  # Create an empty row
@@ -31,7 +32,8 @@ print("\nTuple of numbers:", numbers_tuple)
 # A set is an unordered collection of unique items.
 unique_set = set()
 for i in range(1, 11):
-    unique_set.add(i % 5)  # Add the remainder when dividing by 5, resulting in unique items
+    unique_set.add(i % 5)  
+# Add the remainder when dividing by 5, resulting in unique items
 
 print("\nSet of unique remainders:", unique_set)
 
@@ -48,21 +50,22 @@ for key, value in squares_dict.items():
 # Explanation of Constructs:
 
 # 1. List:
-#    - A list is a dynamic array that can hold elements of different types. It allows duplicate items.
+#    - A list is a dynamic array that can hold elements of different types. It allows 
+# # duplicate items.
 #    - We created `squares_list` using a for loop and `append()` method to add items.
 
 # 2. List of Lists (Matrix):
 #    - A matrix is a collection of lists within a list, creating a 2D array.
-#    - We created `matrix` using nested for loops: the outer loop creates rows, and the inner loop fills each row.
+#    - We created `matrix` using nested for loops: the outer loop creates rows, and the #inner loop fills each row.
 
 # 3. Tuple:
 #    - A tuple is like a list, but it is immutable (cannot be modified after creation).
 #    - We used a generator expression within `tuple()` to create `numbers_tuple`.
 
 # 4. Set:
-#    - A set stores unique elements in an unordered way. It automatically removes duplicates.
-#    - We used `add()` method in a loop to populate `unique_set` with unique remainders of division.
+#    - A set stores unique elements in an unordered way. It automatically removes #duplicates.
+#    - We used `add()` method in a loop to populate `unique_set` with unique remainders #of division.
 
 # 5. Dictionary:
 #    - A dictionary stores data in key-value pairs, where each key is unique.
-#    - We created `squares_dict` by assigning keys and their corresponding squared values inside a loop.
+#    - We created `squares_dict` by assigning keys and their corresponding squared #values inside a loop.
