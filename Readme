@@ -16,8 +16,8 @@ git rev-list -n 1 HEAD -- Stringmanipulation.py
 to restore deleted file using hash key 
 git checkout 54a776a23e621b9e9f02f74b10b6f9fd380ad049^ -- Stringmanipulation.py
 
-git rev-list -n 1 HEAD -- "string addrerss.py
-git checkout b2957e938063fda31ec8e77fd909f5cf55ee88f2^ -- "string addrerss.py"
+git rev-list -n 1 HEAD -- string addrerss.py
+git checkout b2957e938063fda31ec8e77fd909f5cf55ee88f2^ -- string addrerss.py
 
 To connect to remote repository on github which is origin and where we add, commit and push files
 
