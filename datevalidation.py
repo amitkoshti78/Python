@@ -1,7 +1,7 @@
 
 def leap_year(yyyy_j):
     
-    if yyyy_j % 4 == 0 :
+    if yyyy_j % 4 == 0 : 
         if yyyy_j % 100 == 0 :
             if yyyy_j % 400 == 0 :
                 return 29
@@ -9,8 +9,10 @@ def leap_year(yyyy_j):
                 return 28
         else:
             return 29
+            
     else:
         return 28
+    
 
 def date_validation(day_i, month_i, yyyy_i):
 
@@ -76,3 +78,4 @@ def main():
 
 if __name__ == '__main__' :
     main()
+    
