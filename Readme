@@ -70,7 +70,9 @@ git branch -d branchname
 to delete the file or directory recurrsively from staging area without removing from local disk
 git rm --cached -r foldername/   or git rm --cached -r filename
 
-
+to merge the remote github library into local becuase 
+local and remote has different commit points. this brings remote commited files into local machine
+git merge --no-ff
 
 
 
