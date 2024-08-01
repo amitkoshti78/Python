@@ -34,10 +34,7 @@ list_of_student_info = {
                                      "ML"   : 89, 
                                      "AI"   : 72 }
                 ]
-    } 
-
-
-
+} 
 
 student_info_list = list_of_student_info[102]
 

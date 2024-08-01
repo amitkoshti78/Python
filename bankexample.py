@@ -41,6 +41,8 @@ print("\nSet of all unique transactions:", all_transactions)
 
 # 5. Creating a dictionary where each transaction type is the key, and the value is a list of account numbers where that transaction occurred
 transaction_accounts = {transaction: [] for transaction in all_transactions}
+print("\nDictionary of all unique transactions:", transaction_accounts )
+
 for acc_num, acc_details in accounts.items():
     for transaction in acc_details[1]:
         transaction_accounts[transaction].append(acc_num)
@@ -90,11 +92,11 @@ for range_name, acc_list in balance_groups.items():
 
 # Summary of interconnected data structures
 print("\nSummary:")
-print("Customers list:", customers)
-print("Customer details dictionary:", customer_details)
-print("Accounts dictionary:", accounts)
-print("Unique transactions set:", all_transactions)
-print("Transactions with accounts dictionary:", transaction_accounts)
-print("Branch locations dictionary:", branch_locations)
-print("Customers with both 'Deposit $2000' and 'Withdraw $1000':", customers_with_common_transactions)
-print("Accounts grouped by balance:", balance_groups)
+print("\nCustomers list:", customers)
+print("\nCustomer details dictionary:", customer_details)
+print("\nAccounts dictionary:", accounts)
+print("\nUnique transactions set:", all_transactions)
+print("\nTransactions with accounts dictionary:", transaction_accounts)
+print("\nBranch locations dictionary:", branch_locations)
+print("\nCustomers with both 'Deposit $2000' and 'Withdraw $1000':", customers_with_common_transactions)
+print("\nAccounts grouped by balance:", balance_groups)
