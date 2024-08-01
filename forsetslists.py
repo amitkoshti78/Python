@@ -22,9 +22,12 @@ print("\nMatrix (List of Lists):")
 for row in matrix:
     print(row)
 
+print("\nMatrix:")
+print(matrix)
+
 # 3. Creating a Tuple using a for loop
 # A tuple is an ordered, immutable collection of items.
-numbers_tuple = tuple(i for i in range(1, 6))  # Using a generator expression to create a tuple
+numbers_tuple = tuple(i for i in range(1, 6))  # Using a generator expression to create a tuple  generator express --> (variable/expression for loop)
 
 print("\nTuple of numbers:", numbers_tuple)
 
