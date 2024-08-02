@@ -6,17 +6,27 @@ squares_list = []
 for i in range(1, 6):  # range(1, 6) generates numbers from 1 to 5
     squares_list.append(i ** 2)  # Append the square of each number to the list
 
+squares_list = {i : i ** 2 for i in range(1, 10) if i % 2 == 0}
 print("List of squares:", squares_list)
 
 # 2. Creating a List of Lists (Matrix) using nested for loops
 # A matrix is a 2D array, where each element is a list (row) containing other lists ###
 # (columns).
 matrix = []
-for i in range(3):  # 3 rows
+for i in range(3):  # 3 rows        
     row = []  # Create an empty row
-    for j in range(3):  # 3 columns
+    for j in range(3):  # 3 columns   
         row.append(i * 3 + j + 1)  # Populate the row with sequential numbers
     matrix.append(row)  # Add the row to the matrix
+
+matrix = [[i * 3 + j + 1 for j in range(3)] for i in range(3)] 
+'''
+Matrix (List of Lists):
+
+[1,  2,  3]
+[4,  5,  6]
+[7,  8,  9]
+'''
 
 print("\nMatrix (List of Lists):")
 for row in matrix:
