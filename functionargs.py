@@ -161,6 +161,17 @@ def complex_function(pos1, pos2, /, default_arg="default", *args, kwarg1, kwarg2
 # Call the function with various argument types
 complex_function(1, 2, 3, 4, kwarg1="keyword", extra="extra_value")
 
+
+def fun_sum(*arguments) -> float:
+    sum = 0
+    for number in arguments:
+        sum = sum + number
+    
+    return f'{sum:0.2f}'
+
+print(f'SUM OF NUMBERS : {fun_sum(1,2,3,4,5)}')
+
+
 """ Explanation:
 pos1 and pos2 must be passed positionally.
 default_arg is optional and has a default value.

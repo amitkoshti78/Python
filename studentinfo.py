@@ -1,5 +1,5 @@
 list_of_student_info = {
-     101 : [ "Amit", "FY", { "Math" : 78, "ML"  : 89, "AI" : 72 } ] ,
+    101 : [ "Amit", "FY", { "Math" : 78, "ML"  : 89, "AI" : 72 } ] ,
      
     102 : [ "Anurag", "FY", { "Math" : 98, "ML" : 90, "AI" : 84 } ] ,
         
@@ -16,7 +16,6 @@ student_info_list = list_of_student_info[102]
 
 print(f'\n Student with roll no 102 :', end = ' ')
 print(student_info_list)
-
 
 subject_dict = student_info_list[2]
 
@@ -80,7 +79,8 @@ for sub_marks in marks_list:
     math_list.append(sub_marks['Math'])
     ml_list.append(sub_marks['ML'])
     ai_list.append(sub_marks['AI'])
- '''   
+    
+'''   
  Student maths marks list : [78, 98, 87, 84, 86, 78]
 
  Student ML marks list : [89, 90, 93, 94, 86, 89]
@@ -93,5 +93,22 @@ print(f'\n Student ML marks list :', end = ' ')
 print(ml_list)
 print(f'\n Student AI marks list :', end = ' ')
 print(ai_list)
+
+math_list.clear()
+ml_list.clear()
+ai_list.clear()
+
+for key in list_of_student_info:
+    math_list.append(list_of_student_info[key][2]["Math"])
+    ml_list.append(list_of_student_info[key][2]["ML"])
+    ai_list.append(list_of_student_info[key][2]["AI"])
+    
+print(f'\n Student maths marks list :', end = ' ')
+print(math_list)
+print(f'\n Student ML marks list :', end = ' ')
+print(ml_list)
+print(f'\n Student AI marks list :', end = ' ')
+print(ai_list)
+
 
 

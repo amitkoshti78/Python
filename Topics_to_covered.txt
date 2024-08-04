@@ -1,0 +1,22 @@
+1. Regular expression
+2. time/date
+3. function parameters
+4. argv input to program
+8. itertools/iterators
+5. mutlithreading
+6. Algorithms
+7. Socket Network
+8. OOPS
+9. Linked list
+10. data science
+11. boolean algebra
+12. flask
+13. file handling
+14. email
+15. Artificial inteligence
+16. Machine learning
+17. lambada function map/filter 
+18. recurssion
+19. scope
+20. try catch   
+
