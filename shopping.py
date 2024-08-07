@@ -48,3 +48,33 @@ SNo  Article_Nr  Article_Name   Color    Size      Price
                                     Total Rs. :     11125 
 '''
 
+# Function to print bill for a customer
+def print_customer_bill(customer_id):
+    customer_info = customer_list[customer_id]
+    shopping_items = shopping_list[customer_id]
+    
+    print("-------------------------------------------------------------------")
+    print("                     Customer Bill")
+    print(f"Customer Number : {customer_id}         Customer Address : {customer_info[1]}")
+    print(f"Customer Name   : {customer_info[0]}          Customer email   : {customer_info[2]}")
+    print("-------------------------------------------------------------------")
+    print("SNo  Article_Nr  Article_Name   Color    Size      Price")
+    print("-------------------------------------------------------------------")
+    
+    total_price = 0
+    for index, (article_id, size) in enumerate(shopping_items):
+        article_info = list_of_article_info[article_id]
+        article_name = article_info[0]
+        color = article_info[1]
+        price = article_info[2][size]
+        total_price += price
+        
+        print(f"{index + 1}      {format(article_id)}        {article_name}       {color}       {size}      {price}")
+    
+    print("-------------------------------------------------------------------")
+    print(f"                                     Total Rs. :     {total_price}")
+
+# Print bill for each customer
+for customer_id in shopping_list.keys():
+    print_customer_bill(customer_id)
+    print("\n")
