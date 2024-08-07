@@ -6,6 +6,8 @@ squares_list = []
 for i in range(1, 6):  # range(1, 6) generates numbers from 1 to 5
     squares_list.append(i ** 2)  # Append the square of each number to the list
 
+print("Square list using for loop :", squares_list)
+
 squares_list = {i : i ** 2 for i in range(1, 10) if i % 2 == 0}
 print("List of squares:", squares_list)
 
