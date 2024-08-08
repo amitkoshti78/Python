@@ -53,7 +53,7 @@ def print_customer_bill(customer_id):
     customer_info = customer_list[customer_id]
     shopping_items = shopping_list[customer_id]
     
-    print("-------------------------------------------------------------------")
+    print("-" * 75)
     print("                     Customer Bill")
     print(f"Customer Number : {customer_id}         Customer Address : {customer_info[1]}")
     print(f"Customer Name   : {customer_info[0]}          Customer email   : {customer_info[2]}")
@@ -74,7 +74,13 @@ def print_customer_bill(customer_id):
     print("-------------------------------------------------------------------")
     print(f"                                     Total Rs. :     {total_price}")
 
+
+def main():
 # Print bill for each customer
-for customer_id in shopping_list.keys():
-    print_customer_bill(customer_id)
-    print("\n")
+
+    for customer_id in shopping_list.keys():
+        print_customer_bill(customer_id)
+        print("\n")
+        
+if __name__ == '__main__' :
+    main()

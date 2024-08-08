@@ -94,6 +94,30 @@ print(ml_list)
 print(f'\n Student AI marks list :', end = ' ')
 print(ai_list)
 
+
+list_of_student_info = {
+
+#   Key       Value
+#              0      1             2
+#                             key   val   key    val  key   val
+    101 : [ "Amit", "FY", { "Math" : 78, "ML"  : 89, "AI" : 72 } ] ,
+     
+    102 : [ "Anurag", "FY", { "Math" : 98, "ML" : 90, "AI" : 84 } ] ,
+        
+    103 : [ "Neha", "FY", { "Math" : 87, "ML" : 93, "AI" : 80 } ] ,
+    
+    104 : [ "Tanvi", "FY", { "Math" : 84, "ML" : 94, "AI" : 90 } ] , 
+     
+    105 : [ "Omkar", "FY", { "Math" : 86, "ML" : 86, "AI" : 72 } ] , 
+
+    106 : [ "Varad", "FY", { "Math" : 78, "ML" : 89, "AI" : 72 } ]
+} 
+
+math_list.clear()
+math_list.append(list_of_student_info[101][2]["Math"])
+print(f'\n Student maths marks list :', end = ' ')
+print(math_list)
+
 math_list.clear()
 ml_list.clear()
 ai_list.clear()
