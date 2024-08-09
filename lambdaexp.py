@@ -1,4 +1,17 @@
 
+def maxf(number1, number2):
+    if number1 > number2:
+        return number1
+    else:
+        return number2
+    
+maxnum = maxf(10,13)
+print("\n Max number is :" , maxnum)
+
+maxnum = lambda number1, number2 : number1 if number1 > number2 else number2
+print("\n Max number is :" , maxnum(10,13))
+
+
 def square_num(number):
     return number ** 2
 
