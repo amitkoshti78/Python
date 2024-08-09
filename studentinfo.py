@@ -1,4 +1,4 @@
-list_of_student_info = {
+""" list_of_student_info = {
     101 : [ "Amit", "FY", { "Math" : 78, "ML"  : 89, "AI" : 72 } ] ,
      
     102 : [ "Anurag", "FY", { "Math" : 98, "ML" : 90, "AI" : 84 } ] ,
@@ -93,7 +93,7 @@ print(f'\n Student ML marks list :', end = ' ')
 print(ml_list)
 print(f'\n Student AI marks list :', end = ' ')
 print(ai_list)
-
+ """
 
 list_of_student_info = {
 
@@ -113,19 +113,23 @@ list_of_student_info = {
     106 : [ "Varad", "FY", { "Math" : 78, "ML" : 89, "AI" : 72 } ]
 } 
 
-math_list.clear()
-math_list.append(list_of_student_info[101][2]["Math"])
+math_list = []
+ml_list = []
+ai_list = []
+
+
+math_list.append(list_of_student_info[104][2]["AI"])
 print(f'\n Student maths marks list :', end = ' ')
 print(math_list)
 
-math_list.clear()
-ml_list.clear()
-ai_list.clear()
+# math_list.clear()
+# ml_list.clear()
+# ai_list.clear()
 
 for key in list_of_student_info:
-    math_list.append(list_of_student_info[key][2]["Math"])
-    ml_list.append(list_of_student_info[key][2]["ML"])
-    ai_list.append(list_of_student_info[key][2]["AI"])
+     math_list.append(list_of_student_info[key][2]["Math"])
+     ml_list.append(list_of_student_info[key][2]["ML"])
+     ai_list.append(list_of_student_info[key][2]["AI"])
     
 print(f'\n Student maths marks list :', end = ' ')
 print(math_list)

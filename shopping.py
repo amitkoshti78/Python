@@ -1,5 +1,6 @@
 list_of_article_info = {
 # Article No   Name       color            size and its price
+#                0          1              2
     1001 :  [ "Shirt",   "Red",   { "S" : 1250, "M" : 1400, "L" : 1500 } ],
     1002 :  [ "Shirt",   "Blue",  { "S" : 1350, "M" : 1450, "L" : 1550 } ],
     2001 :  [ "Jeans",   "Blue",  { "S" : 1600, "M" : 1700, "L" : 1800 } ],
@@ -13,7 +14,8 @@ list_of_article_info = {
     } 
 
 customer_list = {
-# Cust No        Name       Address          email id     
+# Cust No        Name       Address          email id   
+#                 0           1                 2  
     "C001" :  [  "Amit",    "Pune",         "amit@gmail.com"   ],
     "C002" :  [  "Omkar",   "Chinchwad",    "omkar@gmail.com"  ],
     "C003" :  [  "Neha",    "Baner",        "neha@gmail.com"   ],
@@ -23,12 +25,20 @@ customer_list = {
 
 shopping_list = {
 # Cust No        Shoping list with Article no and size
+#                  0            1             2            3
+#                 0     1      0     1      0     1      0     1
     "C001"  : [ (1001, "M"), (2002, "S"), (5001, "L"), (4002, "M")], 
     "C002"  : [ (3001, "M"), (5002, "S"), (1001, "L")],
     "C003"  : [ (5001, "M"), (2001, "S"), (5002, "S"), (3002, "M"),(4001, "S") ],
     "C004"  : [ (1002, "L"), (4002, "S"), (3002, "L")],
     "C005"  : [ (1001, "M"), (1001, "S"), (2001, "S"), (2002, "S")]       
 }   
+
+one_cust = shopping_list["C001"][1][0]
+print(one_cust)
+
+article_list = list_of_article_info[shopping_list["C001"][1][0]][2]["M"]
+print(article_list)
 
 # output expected for each customer from shopping list. So you need print
 # below information for each customer. 
@@ -49,29 +59,28 @@ SNo  Article_Nr  Article_Name   Color    Size      Price
 '''
 
 # Function to print bill for a customer
-def print_customer_bill(customer_id):
-    customer_info = customer_list[customer_id]
-    shopping_items = shopping_list[customer_id]
-    
+def print_customer_bill(customer_id):                
+    customer_info = customer_list[customer_id]       
+    shopping_items = shopping_list[customer_id]   
     print("-" * 75)
     print("                     Customer Bill")
     print(f"Customer Number : {customer_id}         Customer Address : {customer_info[1]}")
     print(f"Customer Name   : {customer_info[0]}          Customer email   : {customer_info[2]}")
-    print("-------------------------------------------------------------------")
+    print("-" * 75)
     print("SNo  Article_Nr  Article_Name   Color    Size      Price")
-    print("-------------------------------------------------------------------")
+    print("-" * 75)
     
     total_price = 0
-    for index, (article_id, size) in enumerate(shopping_items):
-        article_info = list_of_article_info[article_id]
+    for srno, (article_id, size) in enumerate(shopping_items):
+        article_info = list_of_article_info[article_id]  
         article_name = article_info[0]
         color = article_info[1]
         price = article_info[2][size]
         total_price += price
         
-        print(f"{index + 1}      {format(article_id)}        {article_name}       {color}       {size}      {price}")
+        print(f"{srno + 1}      {format(article_id)}        {article_name}       {color}       {size}      {price}")
     
-    print("-------------------------------------------------------------------")
+    print("-" * 75)
     print(f"                                     Total Rs. :     {total_price}")
 
 
