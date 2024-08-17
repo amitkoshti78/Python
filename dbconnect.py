@@ -50,7 +50,8 @@ def db_connect():
         db_query(conn)
     finally:
         print("Data base closed")
-        conn.close()
+        if conn != None:
+            conn.close()
         
 def main():
     db_connect()
