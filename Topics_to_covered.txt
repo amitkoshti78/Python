@@ -18,5 +18,6 @@
 17. lambada function map/filter 
 18. recurssion
 19. scope
-20. try catch   
+20. try catch  
+21. dunder in python 
 
