@@ -7,19 +7,31 @@ def add_num(name, *numbers):
     
     return sum, name.upper()
 
-result, upp_name = add_num('amit', 1,3,7,8,2,7,56,12,78,90,12,45 )
+result, upp_name = add_num('amit', 1,3,7,8,2,7,56,12,78,90,12,45,34,98,12,32 )
 print(f' Hi {upp_name} the sum of numbers is : {result}')
 
+def upp_name(*names):
+    upp_name_list = []
+    print(names)
+    for name in names:
+        upp_name_list.append(name.upper())
+    
+    return upp_name_list
+
+print(upp_name("Amit", "Neha", "Omkar", "Anurag", "Aditya"))
 
 def student(**kwargs):
 
     print(kwargs)
-    for info in kwargs.items():
-        print(info)
+    kwargs['age'] = 46
+    for key, value in kwargs.items():
+        #print(key, value)
+        kwargs['sem'] = 4
+        
+        
+    return kwargs
 
-    
-
-student(first_name="Amit", rnr = 101, yy = 2024, sem = 3)
+print(student(first_name="Amit", rnr = 101, yy = 2024, sem = 3))
 
 
 def student_marks(*marks, **kwargs):
