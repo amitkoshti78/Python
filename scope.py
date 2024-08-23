@@ -27,7 +27,7 @@ print(x)'''
 
 #PI = 3.14
 
-class ConstantsNamespace():
+""" class ConstantsNamespace():
     __slots__ = ()
     PI = 3.14159
     GRAVITY = 9.80665
@@ -48,7 +48,7 @@ from enum import Enum
 class MyConstants(Enum):
     MY_PI = 3.14
     MY_GRAVITY = 9.81
-    MONTH = "May"
+    MONTH = "May" """
     
 #MyConstants.MY_PI = 100
 #print(list(MyConstants))
@@ -78,31 +78,31 @@ Built-in: Any built-in name in Python.
  """
  
 #LEGB rule
-from math import pi  # built in
+""" from math import pi  # built in
 
-#pi = 100            # global
+pi = 100            # global
 def outer_fun():
-    #pi = 200        #Enclosing
+    pi = 200        #Enclosing
     def inner_fun():    
-        #pi = 300    #Enclosing
+        pi = 300    #Enclosing
         def deep_inner_fun():
-            #pi = 400   #loval
+            pi = 400   #local
             print("Value of pi : ", pi)
         deep_inner_fun()
     inner_fun()
-outer_fun()   
+outer_fun()   """ 
 
 
 x = 1
 
 def sum_fun():
-    #global x
+    global x
     print("Value of x inside function :", x)   
-    #x = x + 1
+    x = x + 1
 
-print("Value of x outside of function x :", x)  
+
 sum_fun()   
-
+print("Value of x outside of function x :", x)  
 
 def name_fun():
     name = "Amit"
@@ -117,6 +117,8 @@ myname_funct1()
 
 def add_fun(num1, num2):
     sum_int = num1 + num2  
+    number1 = 10
+    number2 = 30
     print("Sum is :", sum_int)
 
 number1 = 1

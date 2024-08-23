@@ -115,7 +115,7 @@ If you want to pass a variable number of positional arguments, you can use *args
  """
  
 def add_numbers(*args):
-    return sum(args)
+    return sum(args,start=2)
 
 # Call the function with different numbers of arguments
 print(add_numbers(1, 2, 3))  # Output: 6
@@ -144,7 +144,7 @@ def greet(name, /, greeting="Hello"):
 
 # Call the function
 greet("Alice")          # Positional argument required for 'name'
-greet("Alice", "Hi")    # Positional arguments for both
+greet("Alice", greeting="Hi")    # Positional arguments for both
 
 """ Explanation: The / indicates that name must be passed positionally, so greet(name="Alice") would raise an error.
 
@@ -171,7 +171,7 @@ def complex_function(pos1, pos2, /, default_arg="default", *args, kwarg1, kwarg2
     print(f"Additional keyword arguments: {kwargs}")
 
 # Call the function with various argument types
-complex_function(1, 2, 3, 4, kwarg1="keyword", extra="extra_value")
+complex_function(1, 2, 3, 4, 5, 6, kwarg1="Amit", kwarg2="Omkar" , extra="extra_value", age=30, city="Pune")
 
 
 def fun_sum(*arguments) -> float:
@@ -181,7 +181,7 @@ def fun_sum(*arguments) -> float:
     
     return f'{sum:0.2f}'
 
-print(f'SUM OF NUMBERS : {fun_sum(1,2,3,4,5)}')
+print(f'SUM OF NUMBERS : {fun_sum(1,2.5,3.3,4.1,5.25)}')
 
 
 """ Explanation:
