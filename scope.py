@@ -94,12 +94,10 @@ outer_fun()   """
 
 
 x = 1
-
 def sum_fun():
-    global x
+    #global x
     print("Value of x inside function :", x)   
     x = x + 1
-
 
 sum_fun()   
 print("Value of x outside of function x :", x)  

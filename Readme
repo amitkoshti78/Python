@@ -75,6 +75,11 @@ local and remote has different commit points. this brings remote commited files 
 git merge --no-ff
 
 
+To install the certificate in case of ssl errors
+python3 -m pip install --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org --upgrade pip
+
+pip install requests==2.18.4 --user --trusted-host=pypi.python.org --trusted-host=pypi.org --trusted-host=files.pythonhosted.org
+
 
 
 
