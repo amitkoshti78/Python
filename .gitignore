@@ -2,3 +2,6 @@ logfile.txt
 proglogs/
 .DS_Store
 settings.json
+.idea/
+__pycache__/
+
