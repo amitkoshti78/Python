@@ -1,7 +1,6 @@
 def fun_add(number1=0, number2=0, operator='+'):
     if operator == '+':
         addition = number1 + number2
-        print (addition)
         return addition
     else:
         return f"Invalid operator {operator}"

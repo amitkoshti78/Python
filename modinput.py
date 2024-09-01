@@ -6,7 +6,7 @@ def fun_input():
 
 
 if __name__ == '__main__' :
-    print("inside add doing nothing", __name__)
+    print("Inside input doing nothing", __name__)
     pass
 else:
-    print("Inside add : ", __name__)
+    print("Inside input : ", __name__)
