@@ -1,0 +1,6 @@
+2024-09-27 15:58:28,831 - Transaction f9f83fe6-b504-4f-20240927155828: Debit 100 from 1234567890, Credit 100 to 9876543210 - Success
+2024-09-27 15:58:28,848 - Transaction cf3b50ba-b9ef-45-20240927155828: Failed - Error while crediting Account B!
+2024-09-27 15:59:40,976 - Transaction e2fd423c-2ce9-45-20240927155940: Debit 100 from 1234567890, Credit 100 to 9876543210 - Success
+2024-09-27 15:59:40,991 - Transaction a3bf4221-59ba-4f-20240927155940: Failed - Error while crediting Account B!
+2024-09-27 16:02:49,783 - Transaction e2d299e4-58fe-4c-20240927160249: Debit 100 from 1234567890, Credit 100 to 9876543210 - Success
+2024-09-27 16:02:49,800 - Transaction 1e482b7e-8b25-44-20240927160249: Failed - Error while crediting Account B!
