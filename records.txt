@@ -1,30 +1,14 @@
-Record 1
-Record 2
-Record 3
-Record 4
-Record 5
-Record 6
-Record 7
-Record 8
-Record 9
-Record 10
-Record 11
-Record 12
-Record 13
-Record 14
-Record 15
-Record 16
-Record 17
-Record 18
-Record 19
-Record 20
-Record 21
-Record 22
-Record 23
-Record 24
-Record 25
-Record 26
-Record 27
-Record 28
-Record 29
-Record 30
+fisrt_name;last_name;email_id;phone_number
+Anmol;Jadhav;Anmol.Jadhav@gmail.com;9812341254
+Amol;Kamble;Amol.Kamble@gmail.com;9142343257
+
+Sameer;Patil;Sameer.Patil@gmail.com;9215368213
+Omkar;Kulkarni;Omkar.Kulkarni@gmail.com;9372301917
+
+Samara;Khan;Samara.Khan@gmail.com;9850642264
+Parthana;Joshi;Parthana.Joshi@gmail.com;9172183206
+Sujit;Gavit;Sujit.Gavit@gmail.com;9225060215
+
+Akshay;Patil;Akshay.Patil@yahoo.com;9157023737
+Viraj;Kamble;Viraj.Kamble@gmail.com;9384397521
+Aparna;Shinde;Aparna.Shinde@gmail.com;9197261300
