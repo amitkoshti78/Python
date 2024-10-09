@@ -19,6 +19,7 @@ logging.basicConfig(filename='transaction_log.txt', level=logging.INFO,
                     format='%(asctime)s - %(message)s')
 
 
+
 # Function to generate a unique transaction ID with timestamp
 def generate_transaction_id():
     timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
@@ -141,7 +142,7 @@ if __name__ == '__main__':
 
     # Test the transaction with a forced failure (rollback scenario)
     print("\nPerforming transaction with a failure (forced rollback):")
-    perform_transaction(debit_account_number='1234567890', debit_account_name='John Do', debit_amount=100,
-                    credit_account_number='9876543210', credit_account_name='Jane Smith',
-                    credit_amount=-1)  # Simulate failure
+    #perform_transaction(debit_account_number='1234567890', debit_account_name='John Do', #debit_amount=100,
+    #                credit_account_number='9876543210', credit_account_name='Jane Smith',
+    #                credit_amount=-1)  # Simulate failure
 

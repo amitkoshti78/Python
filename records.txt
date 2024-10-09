@@ -9,6 +9,6 @@ Samara;Khan;Samara.Khan@gmail.com;9850642264
 Parthana;Joshi;Parthana.Joshi@gmail.com;9172183206
 Sujit;Gavit;Sujit.Gavit@gmail.com;9225060215
 
-Akshay;Patil;Akshay.Patil@yahoo.com;9157023737
+Akshay;Patil;Akshay.Patil@gmail.com;9150021725
 Viraj;Kamble;Viraj.Kamble@gmail.com;9384397521
 Aparna;Shinde;Aparna.Shinde@gmail.com;9197261300
