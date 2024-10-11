@@ -138,7 +138,7 @@ if __name__ == '__main__':
     # Test the transaction with a successful operation
     print("Performing successful transaction:")
     perform_transaction(debit_account_number='1234567890', debit_account_name='John Doe', debit_amount=100,
-                    credit_account_number='9876543210', credit_account_name='Jane Smith', credit_amount=100)
+                    credit_account_number='9876543210', credit_account_name='Jone Smith', credit_amount=100)
 
     # Test the transaction with a forced failure (rollback scenario)
     print("\nPerforming transaction with a failure (forced rollback):")

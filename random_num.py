@@ -6,7 +6,7 @@ print(random.choice(my_list))
 # for else construct and random number
 answer = 'y'
 
-while answer != 'n':
+while answer == 'y' or answer == 'Y':
     for i in range(1, 4, 1):
         # randint function inside random package generates random number within range. 
         # here we have given range between 0 to 50 including both numbers
@@ -23,7 +23,7 @@ while answer != 'n':
         print("Attempts over!! Your guess is wrong!! You Lost. Winning number is", random_num )
 
     print("\n Do you want to play again y/n :", end=' ')
-    answer = input().lower()
+    answer = input()
     
   
         
