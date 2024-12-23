@@ -4,4 +4,17 @@ proglogs/
 settings.json
 .idea/
 __pycache__/
+.idea/workspace.xml
+.idea/misc.xml
+py3.9env/
+# Ignore virtual environment folders
+venv/
+myenv/
 
+# Ignore Python bytecode files
+__pycache__/
+*.pyc
+
+# Ignore other Python-related files
+*.pyo
+*.pyd
