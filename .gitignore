@@ -11,6 +11,8 @@ __pycache__/
 venv/
 myenv/
 py3.9venv/
+py3.12venv/
+py3.10venv/
 
 # Ignore Python bytecode files
 __pycache__/
