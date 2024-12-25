@@ -3,11 +3,12 @@ generate_image_ai.py
 test_api_key.py
 test_api_key.txt
 test_api_key.json
+.idea/
 
 proglogs/
 .DS_Store
 settings.json
-.idea/
+.idea/*.*
 __pycache__/
 .idea/workspace.xml
 .idea/misc.xml
