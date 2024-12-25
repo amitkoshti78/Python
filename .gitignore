@@ -1,4 +1,9 @@
 logfile.txt
+generate_image_ai.py
+test_api_key.py
+test_api_key.txt
+test_api_key.json
+
 proglogs/
 .DS_Store
 settings.json
@@ -21,3 +26,4 @@ __pycache__/
 # Ignore other Python-related files
 *.pyo
 *.pyd
+*.txt
