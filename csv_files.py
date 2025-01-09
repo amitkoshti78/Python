@@ -1,6 +1,6 @@
-    import csv
+import csv
 
-    def read_csv_file(filename):
+def read_csv_file(filename):
         try:
             with open(filename, mode='r') as rd_file:
                 records = csv.reader(rd_file)   
@@ -11,7 +11,7 @@
         except Exception as err:
             print(f"Error {err} has occurred while reading {filename}")
 
-    def write_csv_file(filename, records):
+def write_csv_file(filename, records):
         try:
             with open(filename, mode='w', newline='\n') as wr_file:
                 write_records = csv.writer(wr_file)
@@ -19,7 +19,7 @@
         except Exception as err:
             print(f"Error {err} has occurred while writing {filename}")
 
-    def append_csv_file(filename, record):
+def append_csv_file(filename, record):
         try:
             with open(filename, mode='a', newline='\n') as ap_file:
                 app_record = csv.writer(ap_file)
@@ -27,7 +27,7 @@
         except Exception as err:
             print(f"Error {err} has occurred while writing {filename}")
 
-    def read_dict_csv_file(filename):
+def read_dict_csv_file(filename):
         try:
             with open(filename, mode='r') as rd_file:
                 records = csv.DictReader(rd_file)
@@ -39,7 +39,7 @@
         except Exception as err:
             print(f"Error {err} has occurred while reading {filename}")
 
-    def write_dict_csv_file(filename, records, column_names):
+def write_dict_csv_file(filename, records, column_names):
         try:
             with open(filename, mode='w', newline='\n') as wr_file:
                 write_records = csv.DictWriter(wr_file, fieldnames=column_names)
@@ -50,7 +50,7 @@
             print(f"Error {err} has occurred while writing {filename}")
 
 
-    if __name__ == '__main__':
+if __name__ == '__main__':
         file_name = 'Employee.csv'
         employees = [
             ["Swapnil", "Manager", 55000],
