@@ -46,6 +46,9 @@ if __name__ == "__main__":
     window.geometry("600x600")
     window.title("Open CSV File")
 
+    label = tk.Label(window,text="CSV File Handling",font=('Verdana', 16))
+    label.pack(padx=25,pady=25)
+
     entry = tk.Entry(window,font=('Arial', 14))
     entry.place(height=800,width=800 )
     entry.pack(padx=25,pady=25)
