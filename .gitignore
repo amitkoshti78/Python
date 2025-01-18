@@ -12,6 +12,10 @@ settings.json
 __pycache__/
 .idea/workspace.xml
 .idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/misc.xml
+.idea/.gitignore
 
 # Ignore virtual environment folders
 venv/
