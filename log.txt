@@ -1,49 +1,5 @@
-WARNING:root:division by zero
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str'
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str'
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str'
-WARNING:root:division by zero : Ocuured due to 0
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to A
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to Amit
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to 45
-WARNING:root:division by zero : Ocuured due to 0
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to A
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to Amit
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to 45
-WARNING:root:division by zero : Ocuured due to 0
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to A
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to Amit
-WARNING:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to 45
-WARNING:root:division by zero : Ocuured due to 0
-ERROR:root:division by zero : Ocuured due to 0
-ERROR:root:division by zero : Ocuured due to 0
-ERROR:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to A
-ERROR:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to Amit
-ERROR:root:unsupported operand type(s) for /: 'int' and 'str' : Ocuured due to 45
-ERROR:root:division by zero : Ocuured due to 0
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
-ERROR:root:invalid literal for int() with base 10: 'A' : Ocuured due to A
-ERROR:root:invalid literal for int() with base 10: 'Amit' : Ocuured due to Amit
+Name,Age,City
+John Doe,33,New York
+Jane Doe,30,Chicago
+Tom Smith,45,Los Angeles
+Jen Smith,40,Houston
