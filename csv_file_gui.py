@@ -20,11 +20,11 @@ def read_csv_file(file_name):
     try:
         with open(file_name, mode='r') as file_handle:
             reader = csv.reader(file_handle)
-            entry.delete(0, tk.END)
+            text_box.delete(1.0, tk.END)
             for row in reader:
-              
-                row = row + "\n"
-                entry.insert(tk.END, row)
+                for value in row:
+                    text_box.insert(tk.END, f"{value} ")
+                text_box.insert(tk.END, "\n")
                 
     except Exception as e:
         print(f"Error while reading a file {e}")
@@ -49,9 +49,11 @@ if __name__ == "__main__":
     label = tk.Label(window,text="CSV File Handling",font=('Verdana', 16))
     label.pack(padx=25,pady=25)
 
-    entry = tk.Entry(window,font=('Arial', 14))
-    entry.place(height=800,width=800 )
+    entry = tk.Entry(window,width=100,font=('Arial', 14))
     entry.pack(padx=25,pady=25)
+
+    text_box = tk.Text(window,width=100,height=10,font=('Arial', 14))
+    text_box.pack(padx=25,pady=25)
 
     open_button = tk.Button(window,text="Open CSV File",command=lambda : open_csv_file(data))
     open_button.pack(padx=35,pady=35)

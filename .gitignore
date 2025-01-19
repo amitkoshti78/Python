@@ -32,3 +32,4 @@ __pycache__/
 *.pyo
 *.pyd
 *.txt
+*.csv
