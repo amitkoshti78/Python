@@ -18,8 +18,8 @@ def on_clear(lable, text_list):
 
 def main():
     root = tk.Tk()  
-    root.title("My APP!")
-    root.geometry("400x400")
+    root.title("My APPLICATION!")
+    root.geometry("400x600")
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
 
