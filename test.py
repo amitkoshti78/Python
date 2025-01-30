@@ -17,6 +17,7 @@ b = str(b)
 ####################################
 
 # 🚨 Don't change the code below 👇
+print("Added for Development")
 print("a: " + a)
 print("b: " + b)
 
