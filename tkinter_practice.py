@@ -19,12 +19,12 @@ def on_clear(lable, text_list):
 def main():
     root = tk.Tk()  
     root.title("My APP!")
-    root.geometry("400x400")
+    root.geometry("600x600")
     root.rowconfigure(0, weight=1)
     root.columnconfigure(0, weight=1)
 
     frame = tk.Frame(root)
-    frame.grid(row=0, column=0, sticky="ns")
+    frame.grid(row=0, column=0, sticky="ns", rowspan=20)
     #frame.rowconfigure(0, weight=1)
     frame.columnconfigure(0, weight=1)
 
@@ -52,7 +52,7 @@ def main():
     close_button.grid(row=9, column=1)
 
     frame1 = tk.Frame(root)
-    frame1.grid(row=0, column=5, sticky="ns", rowspan=10)
+    frame1.grid(row=1, column=0, sticky="ns", rowspan=10)
     #frame.rowconfigure(0, weight=1)
     frame1.columnconfigure(1, weight=1)
     text_list = tk.Listbox(frame1)
