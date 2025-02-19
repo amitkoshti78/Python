@@ -3,6 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
+from tkcalendar import Calendar, DateEntry
 import os
 
 def enter_data():
@@ -10,14 +11,14 @@ def enter_data():
 
 root = tk.Tk()
 root.title("Data Entry Form")
-root.geometry("800x500+400+100")
+root.geometry("800x600+500+200")
 
 frame = tk.Frame(root)
 frame.pack()
 
 ## >Personal info frame
 personal_info_frame = ttk.LabelFrame(frame, text="Personal Information")
-personal_info_frame.grid(row=0, column=0, padx=20, pady=10)
+personal_info_frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=10)
 
 
 first_name_label = tk.Label(personal_info_frame, text="First Name")
@@ -38,6 +39,12 @@ last_name_entry.grid(row=1, column=1)
 
 title_combobox = ttk.Combobox(personal_info_frame, values=["Mr.", "Mrs.", "Ms."])
 title_combobox.grid(row=1, column=2)
+
+dob_label = tk.Label(personal_info_frame, text="DOB")
+dob_label.grid(row=0, column=3)
+
+cal = DateEntry(personal_info_frame, selectmode = 'day', year = 2025, month = 2, day = 19)
+cal.grid(row=1, column=3)
 
 for widget in personal_info_frame.winfo_children():
     widget.grid(padx=5, pady=5) 
@@ -66,7 +73,7 @@ address_label = tk.Label(address_frame, text="Enter Address")
 address_label.grid(row=0,column=0)
 
 address_text = tk.Text(address_frame, width=40, height=3)
-address_text.grid(row=0, column=1)
+address_text.grid(row=0, column=1, padx=20, pady=5)
 
 for widget in contact_info_frame.winfo_children():
     widget.grid(padx=5, pady=5)
@@ -106,10 +113,18 @@ for widget in course_frame.winfo_children():
 terms_frame = tk.LabelFrame(frame, text="Terms & Conditions")
 terms_frame.grid(row=3, column=0, sticky="news", padx=20, pady=10)
 
+registered_var = tk.StringVar(value="Not Rigistered")
+registered_check = tk.Checkbutton(terms_frame, text= "I would like to register for above course.",
+                                  variable=registered_var, onvalue="Registered", offvalue="Not Registered")
+registered_check.grid(row=0, column=0)
+
 accept_var = tk.StringVar(value="Not Accepted")
 terms_check = tk.Checkbutton(terms_frame, text= "I accept the terms and conditions.",
                                   variable=accept_var, onvalue="Accepted", offvalue="Not Accepted")
-terms_check.grid(row=0, column=0)
+terms_check.grid(row=1, column=0)
+
+for widget in terms_frame.winfo_children():
+    widget.grid(padx=5, pady=5)
 
 # Button
 button = tk.Button(frame, text="Enter data", command= enter_data)
