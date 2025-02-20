@@ -6,7 +6,7 @@ root.title("Tkinter Frames Example")
 root.geometry("400x300")
 
 # Frame 1 with border
-frame1 = tk.Frame(root, bd=2, relief=tk.SOLID, width=400, height=150)
+frame1 = tk.Frame(root, bd = 2, relief=tk.SOLID, width=400, height=150)
 frame1.pack_propagate(False)  # Prevent frame from resizing to its children
 frame1.pack(side=tk.TOP, fill=tk.BOTH, padx=10, pady=10)
 
@@ -21,7 +21,7 @@ button1 = tk.Button(frame1, text="Submit", command=lambda: print(f"Hello, {entry
 button1.pack(pady=5)
 
 # Frame 2 with border
-frame2 = tk.Frame(root, bd=2, relief=tk.SOLID, width=400, height=150)
+frame2 = tk.Frame(root, borderwidth=1, relief=tk.SOLID, width=400, height=150)
 frame2.pack_propagate(False)  # Prevent frame from resizing to its children
 frame2.pack(side=tk.TOP, fill=tk.BOTH, padx=10, pady=10)
 

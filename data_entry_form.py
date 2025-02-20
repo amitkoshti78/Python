@@ -4,7 +4,7 @@ root_window = tk.Tk()
 root_window.title("Data Entry Form")
 root_window.geometry("600x600+500+100")
 
-frame = tk.Frame(root_window, bd=20, bg="lightblue")
+frame = tk.Frame(root_window, bd=3, relief=tk.RAISED, bg="lightcyan")  # relief : flat, groove, raised, ridge, solid, or sunken
 frame.pack(padx=10, pady=10)
 
 personal_info_frame = tk.LabelFrame(frame,text="Personal Information", bg="lightgrey")
