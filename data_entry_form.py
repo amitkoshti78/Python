@@ -14,31 +14,41 @@ root_window = tk.Tk()
 root_window.title("Data Entry Form")
 root_window.geometry("400x400+100+100")
 
+
+# master frame created for complete root_window. This will cover whole area of root_window 
+# it will not be visible as it is not having any border or background color.
 main_frame = tk.Frame(root_window)
 main_frame.pack(fill=tk.BOTH, expand=True)
 
+# canvas is created to add scrollbar to the main_frame. It is another layer of frame which will have scrollbar.
 canvas = tk.Canvas(main_frame)
 canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
+# vertical scrollbar is created and attached to the canvas. It will scroll the canvas vertically.
 v_scrollbar = ttk.Scrollbar(main_frame, orient=tk.VERTICAL, command=canvas.yview)
 v_scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
+# horizontal scrollbar is created and attached to the canvas. It will scroll the canvas horizontally.
 h_scrollbar = ttk.Scrollbar(root_window, orient=tk.HORIZONTAL, command=canvas.xview)
 h_scrollbar.pack(side=tk.BOTTOM, fill=tk.X)
 
+# configure the canvas to use the scrollbar. It will scroll the canvas vertically and horizontally.
 canvas.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
 canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
 
+# scrollbar_frame is created to add all the widgets. This frame is added to the canvas.
 scrollbar_frame = tk.Frame(canvas)
 canvas.create_window((0,0), window=scrollbar_frame, anchor="nw")
 
-
+# frame1 is created to add personal information widgets. This frame is added to the scrollbar_frame.
 frame1 = tk.Frame(scrollbar_frame, bd=6, relief=tk.RAISED, bg="lightcyan")  # relief : flat, groove, raised, ridge, solid, or sunken
 frame1.pack(padx=10, pady=10)
 
+# personal_info_frame is created to add personal information widgets. This frame is added to the frame1.
 personal_info_frame = tk.LabelFrame(frame1,text="Personal Information", bg="lightgrey")
 personal_info_frame.grid(row=0,column=0) #sticky="nsew",padx=20,pady=10)
 
+# personal information widgets are added to the personal_info_frame.
 title_label = tk.Label(personal_info_frame, text="Title")
 title_label.grid(row=0,column=0)
 
@@ -60,16 +70,18 @@ last_name_entry.grid(row=1,column=2)
 gender_label = tk.Label(personal_info_frame, text="Gender")
 gender_label.grid(row=2,column=0)
 
+#Combobox is used to create dropdown list.
 gender_combobox = ttk.Combobox(personal_info_frame, values=["Male", "Female"])
 gender_combobox.grid(row=3,column=0)
 
 dob_label = tk.Label(personal_info_frame, text="Date of Birth")
 dob_label.grid(row=2,column=1)
 
+#DateEntry is used to create date picker.
 dob_date = DateEntry(personal_info_frame, selectmode="day", year=2025, month=2, day=20)
 dob_date.grid(row=3,column=1)
 
-
+# padx and pady are used to add padding to the widgets.
 for widget in personal_info_frame.winfo_children():
     widget.grid(padx=10,pady=10)
 
@@ -91,12 +103,15 @@ phone_entry.grid(row=1,column=1)
 for widget in contact_info_frame.winfo_children():
     widget.grid(padx=10,pady=10)
 
+# frame2 is created to add address widgets. This frame is added to the scrollbar_frame.
 frame2 = tk.Frame(scrollbar_frame, bd=6, relief=tk.SUNKEN, bg="lightgreen")  # relief : flat, groove, raised, ridge, solid, or sunken
 frame2.pack(padx=10, pady=10)
 
+# address_frame is created to add address widgets. This frame is added to the frame2.
 address_frame = tk.LabelFrame(frame2,text="Address", bg="lightgrey", padx=10, pady=10)
 address_frame.grid(row=0,column=0) #sticky="nsew",padx=20,pady=10)
 
+# address widgets are added to the address_frame.
 street_label = tk.Label(address_frame, text="Street")
 street_label.grid(row=0,column=0)
 
@@ -124,9 +139,11 @@ city_entry.grid(row=3,column=1)
 for widget in address_frame.winfo_children():
     widget.grid(padx=10,pady=10)
 
+# frame3 is created to add course widgets. This frame is added to the scrollbar_frame.
 frame3 = tk.Frame(scrollbar_frame, bd=6, relief=tk.RIDGE, bg="gold")  # relief : flat, groove, raised, ridge, solid, or sunken
 frame3.pack(padx=10, pady=10)
 
+# course_frame is created to add course widgets. This frame is added to the frame3.
 course_frame = tk.LabelFrame(frame3,text="Courses", bg="lightgrey", padx=10, pady=10)
 course_frame.grid(row=0,column=0) #sticky="nsew",padx=20,pady=10)
 
@@ -157,9 +174,11 @@ subject3_entry.grid(row=1,column=3)
 for widget in course_frame.winfo_children():
     widget.grid(padx=10,pady=10)
 
+# frame4 is created to add action widgets. This frame is added to the scrollbar_frame.
 frame4 = tk.Frame(scrollbar_frame, bd=6, relief=tk.RIDGE, bg="silver")  # relief : flat, groove, raised, ridge, solid, or sunken
 frame4.pack(padx=10, pady=10)
 
+# action_frame is created to add action widgets. This frame is added to the frame4.
 action_frame = tk.LabelFrame(frame4,text="Press Button", bg="lightgrey", padx=10, pady=10)
 action_frame.grid(row=0,column=0) #sticky="nsew",padx=20,pady=10)
 
