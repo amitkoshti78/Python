@@ -186,9 +186,12 @@ save_button = tk.Button(action_frame, text="Save", command=lambda :save_data())
 save_button.grid(row=0,column=0)
 
 clear_button = tk.Button(action_frame, text="Clear", command=lambda :save_data())
-clear_button.grid(row=0,column=0)
+clear_button.grid(row=0,column=15)
 
 close_button = tk.Button(action_frame, text="Close", command=root_window.quit)
-close_button.grid(row=0,column=5)
+close_button.grid(row=0,column=20)
+
+for widget in action_frame.winfo_children():
+    widget.grid(padx=20,pady=10)
 
 root_window.mainloop()
