@@ -33,3 +33,5 @@ __pycache__/
 *.pyd
 *.txt
 *.csv
+*.xlsx
+*.xls
