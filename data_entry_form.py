@@ -229,6 +229,201 @@ def save_to_postgres(data):
 
         logging.info("Database connection closed.")
 
+def retrieve_data():
+    first_name = first_name_entry.get()
+    last_name = last_name_entry.get()
+
+    if not first_name or not last_name:
+        messagebox.showwarning("Input Error", "First Name and Last Name must be provided to retrieve data.")
+        return
+
+    try:
+        # Connect to PostgreSQL database
+        conn = psycopg2.connect(
+            dbname="student",
+            user="postgres",
+            password="postgres",
+            host="localhost",
+            port="5432"
+        )
+        
+        cursor = conn.cursor()
+
+        # Retrieve data from the table
+        cursor.execute("""
+            SELECT title, first_name, last_name, gender, dob, email, phone, street, house_no, pin_code, city, course_name, subject1, subject2, subject3
+            FROM form_data
+            WHERE first_name = %s AND last_name = %s
+        """, (first_name, last_name))
+
+        result = cursor.fetchone()
+
+        if result:
+            # Populate the form with the retrieved data
+            title_combobox.set(result[0])
+            first_name_entry.delete(0, tk.END)
+            first_name_entry.insert(0, result[1])
+            last_name_entry.delete(0, tk.END)
+            last_name_entry.insert(0, result[2])
+            gender_combobox.set(result[3])
+            dob_date.set_date(result[4])
+            email_entry.delete(0, tk.END)
+            email_entry.insert(0, result[5])
+            phone_entry.delete(0, tk.END)
+            phone_entry.insert(0, result[6])
+            street_entry.delete(0, tk.END)
+            street_entry.insert(0, result[7])
+            house_no_entry.delete(0, tk.END)
+            house_no_entry.insert(0, result[8])
+            pin_code_entry.delete(0, tk.END)
+            pin_code_entry.insert(0, result[9])
+            city_entry.delete(0, tk.END)
+            city_entry.insert(0, result[10])
+            course_name.set(result[11])
+            subject1_entry.delete(0, tk.END)
+            subject1_entry.insert(0, result[12])
+            subject2_entry.delete(0, tk.END)
+            subject2_entry.insert(0, result[13])
+            subject3_entry.delete(0, tk.END)
+            subject3_entry.insert(0, result[14])
+            logging.info("Data retrieved and form populated successfully.")
+        else:
+            messagebox.showinfo("No Data Found", "No data found for the given First Name and Last Name.")
+            logging.info("No data found for the given First Name and Last Name.")
+
+    except Exception as e:
+        logging.error(f"Error retrieving data from PostgreSQL: {e}")
+        messagebox.showerror("Database Error", "An error occurred while retrieving data.")
+
+    finally:
+        if cursor is not None:
+            cursor.close()
+
+        if conn is not None:
+            conn.close()
+
+        logging.info("Database connection closed after retrieval.")
+
+def update_data():
+    # Collect data from the form
+    data = {
+        "Title": title_combobox.get(),
+        "First Name": first_name_entry.get(),
+        "Last Name": last_name_entry.get(),
+        "Gender": gender_combobox.get(),
+        "Date of Birth": dob_date.get(),
+        "Email": email_entry.get(),
+        "Phone": phone_entry.get(),
+        "Street": street_entry.get(),
+        "House No": house_no_entry.get(),
+        "Pin Code": pin_code_entry.get(),
+        "City": city_entry.get(),
+        "Course Name": course_name.get(),
+        "Subject 1": subject1_entry.get(),
+        "Subject 2": subject2_entry.get(),
+        "Subject 3": subject3_entry.get()
+    }
+
+    # Validate data
+    if not validate_data(data):
+        return
+
+    try:
+        # Connect to PostgreSQL database
+        conn = psycopg2.connect(
+            dbname="student",
+            user="postgres",
+            password="postgres",
+            host="localhost",
+            port="5432"
+        )
+        
+        cursor = conn.cursor()
+
+        # Format the date to YYYY-MM-DD
+        dob = datetime.strptime(data["Date of Birth"], "%m/%d/%y").strftime("%Y-%m-%d")
+
+        # Update data in the table
+        cursor.execute("""
+            UPDATE form_data
+            SET title = %s, gender = %s, dob = %s, email = %s, phone = %s, street = %s, house_no = %s, pin_code = %s, city = %s, course_name = %s, subject1 = %s, subject2 = %s, subject3 = %s
+             WHERE first_name = %s AND last_name = %s
+        """, (
+            data["Title"], data["Gender"], dob, data["Email"], data["Phone"], data["Street"],
+            data["House No"], data["Pin Code"], data["City"], data["Course Name"],
+            data["Subject 1"], data["Subject 2"], data["Subject 3"],
+            data["First Name"], data["Last Name"]
+        ))
+
+        # Commit the transaction
+        conn.commit()
+        logging.info("Data updated in PostgreSQL successfully.")
+
+        # Append the updated data to the Excel sheet
+        save_to_excel(data)
+
+    except Exception as e:
+        logging.error(f"Error updating data in PostgreSQL: {e}")
+        conn.rollback()
+        messagebox.showerror("Database Error", "An error occurred while updating data.")
+
+    finally:
+        if cursor is not None:
+            cursor.close()
+
+        if conn is not None:
+            conn.close()
+
+        logging.info("Database connection closed after update.")
+
+def delete_data():
+    first_name = first_name_entry.get()
+    last_name = last_name_entry.get()
+
+    if not first_name or not last_name:
+        messagebox.showwarning("Input Error", "First Name and Last Name must be provided to delete data.")
+        return
+
+    try:
+        # Connect to PostgreSQL database
+        conn = psycopg2.connect(
+            dbname="student",
+            user="postgres",
+            password="postgres",
+            host="localhost",
+            port="5432"
+        )
+        
+        cursor = conn.cursor()
+
+        # Delete data from the table
+        cursor.execute("""
+            DELETE FROM form_data
+            WHERE first_name = %s AND last_name = %s
+        """, (first_name, last_name))
+
+        # Check if any row was deleted
+        if cursor.rowcount == 0:
+            messagebox.showinfo("No Data Found", "No data found for the given First Name and Last Name.")
+            logging.info("No data found for the given First Name and Last Name.")
+        else:
+            conn.commit()
+            messagebox.showinfo("Success", "Data deleted successfully.")
+            logging.info("Data deleted from PostgreSQL successfully.")
+
+    except Exception as e:
+        logging.error(f"Error deleting data from PostgreSQL: {e}")
+        conn.rollback()
+        messagebox.showerror("Database Error", "An error occurred while deleting data.")
+
+    finally:
+        if cursor is not None:
+            cursor.close()
+
+        if conn is not None:
+            conn.close()
+
+        logging.info("Database connection closed after deletion.")
 
 def clear_form():
     # Clear all input fields
@@ -465,16 +660,29 @@ frame5.pack(padx=10, pady=10)
 action_frame = tk.LabelFrame(frame5,text="Press Button", bg="lightgrey", padx=10, pady=10)
 action_frame.grid(row=0,column=0) #sticky="nsew",padx=20,pady=10)
 
+
 save_button = tk.Button(action_frame, text="Save", command=lambda :save_data())
 save_button.grid(row=0,column=0)
 
+# Update button
+update_button = tk.Button(action_frame, text="Update", command=update_data)
+update_button.grid(row=0, column=10)
+
+# Delete button
+delete_button = tk.Button(action_frame, text="Delete", command=delete_data)
+delete_button.grid(row=0, column=15)
+
 clear_button = tk.Button(action_frame, text="Clear", command=lambda :clear_form())
-clear_button.grid(row=0,column=15)
+clear_button.grid(row=0,column=20)
+
+# Retrieve button
+retrieve_button = tk.Button(action_frame, text="Retrieve", command=retrieve_data)
+retrieve_button.grid(row=0, column=25)
 
 close_button = tk.Button(action_frame, text="Close", command=root_window.quit)
-close_button.grid(row=0,column=20)
+close_button.grid(row=0,column=30)
 
 for widget in action_frame.winfo_children():
-    widget.grid(padx=20,pady=10)
+    widget.grid(padx=20,pady=20)
 
 root_window.mainloop()
