@@ -9,6 +9,13 @@ def save_data():
     print(f"Gender :  {gender_combobox.get()}")
     print(f"Date of Birth :  {dob_date.get()}")
 
+def on_mouse_wheel(event):
+    # Scroll vertically
+    canvas.yview_scroll(-1 * (event.delta // 120), "units")
+
+def on_shift_mouse_wheel(event):
+    # Scroll horizontally when Shift key is held
+    canvas.xview_scroll(-1 * (event.delta // 120), "units")
 
 root_window = tk.Tk()
 root_window.title("Data Entry Form")
@@ -34,7 +41,12 @@ h_scrollbar.pack(side=tk.BOTTOM, fill=tk.X)
 
 # configure the canvas to use the scrollbar. It will scroll the canvas vertically and horizontally.
 canvas.configure(yscrollcommand=v_scrollbar.set, xscrollcommand=h_scrollbar.set)
+# bind the canvas to the scrollbar. It will scroll the canvas vertically and horizontally.
 canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
+
+# Bind mouse scroll events
+canvas.bind_all("<MouseWheel>", on_mouse_wheel)
+canvas.bind_all("<Shift-MouseWheel>", on_shift_mouse_wheel)
 
 # scrollbar_frame is created to add all the widgets. This frame is added to the canvas.
 scrollbar_frame = tk.Frame(canvas)
