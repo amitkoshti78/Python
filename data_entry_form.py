@@ -39,56 +39,63 @@ def on_focus_out(event):
         email_entry.focus_set()  # Bring focus back to the entry widget
 
 def validate_data(data):
-    # Check for empty fields
-    for key, value in data.items():
-        if not value:
-            messagebox.showwarning("Validation Error", f"{key} cannot be empty.")
-            logging.warning(f"Validation failed: {key} is empty.")
+
+    try: 
+        # Check for empty fields
+        for key, value in data.items():
+            if not value:
+                messagebox.showwarning("Validation Error", f"{key} cannot be empty.")
+                logging.warning(f"Validation failed: {key} is empty.")
+                return False
+
+        # Validate email format
+        email_pattern = r"[^@]+@[^@]+\.[^@]+"
+        if not re.match(email_pattern, data["Email"]):
+            messagebox.showwarning("Validation Error", "Invalid email format.")
+            logging.warning("Validation failed: Invalid email format.")
             return False
 
-    # Validate email format
-    email_pattern = r"[^@]+@[^@]+\.[^@]+"
-    if not re.match(email_pattern, data["Email"]):
-        messagebox.showwarning("Validation Error", "Invalid email format.")
-        logging.warning("Validation failed: Invalid email format.")
-        return False
-
-    # Check if phone number is numeric and has at least 10 digits
-    if not data["Phone"].isdigit() or len(data["Phone"]) < 10:
-        messagebox.showwarning("Validation Error", "Phone number must be numeric and at least 10 digits long.")
-        logging.warning("Validation failed: Phone number is not numeric or too short.")
-        return False
-
-    # Check if pin code is numeric and has at least 6 digits
-    if not data["Pin Code"].isdigit() or len(data["Pin Code"]) < 6:
-        messagebox.showwarning("Validation Error", "Pin code must be numeric and at least 6 digits long.")
-        logging.warning("Validation failed: Pin code is not numeric or too short.")
-        return False
-
-    # Validate date of birth
-    try:
-        dob = datetime.strptime(data["Date of Birth"], "%m/%d/%y").date()
-        today = date.today()
-        age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
-
-        if dob > today:
-            messagebox.showwarning("Validation Error", "Date of Birth cannot be in the future.")
-            logging.warning("Validation failed: Date of Birth is in the future.")
+        # Check if phone number is numeric and has at least 10 digits
+        if not data["Phone"].isdigit() or len(data["Phone"]) < 10:
+            messagebox.showwarning("Validation Error", "Phone number must be numeric and at least 10 digits long.")
+            logging.warning("Validation failed: Phone number is not numeric or too short.")
             return False
 
-        if age < 18:
-            messagebox.showwarning("Validation Error", "Student must be at least 18 years old.")
-            logging.warning("Validation failed: Student is under 18 years old.")
+        # Check if pin code is numeric and has at least 6 digits
+        if not data["Pin Code"].isdigit() or len(data["Pin Code"]) < 6:
+            messagebox.showwarning("Validation Error", "Pin code must be numeric and at least 6 digits long.")
+            logging.warning("Validation failed: Pin code is not numeric or too short.")
             return False
 
-    except ValueError as e:
-        messagebox.showwarning("Validation Error", "Invalid date format.")
-        logging.warning(f"Validation failed: Invalid date format. {e}")
-        return False
+        # Validate date of birth
+        try:
+            dob = datetime.strptime(data["Date of Birth"], "%m/%d/%y").date()
+            today = date.today()
+            age = today.year - dob.year - ((today.month, today.day) < (dob.month, dob.day))
+
+            if dob > today:
+                messagebox.showwarning("Validation Error", "Date of Birth cannot be in the future.")
+                logging.warning("Validation failed: Date of Birth is in the future.")
+                return False
+
+            if age < 18:
+                messagebox.showwarning("Validation Error", "Student must be at least 18 years old.")
+                logging.warning("Validation failed: Student is under 18 years old.")
+                return False
+
+        except ValueError as e:
+            messagebox.showwarning("Validation Error", "Invalid date format.")
+            logging.warning(f"Validation failed: Invalid date format. {e}")
+            return False
     
-    if data["Registered"] == "Not Registered" or data["Accepted"] == "Not Accepted" :
-        messagebox.showwarning("Validation Error", "You must Register and Accept terms and Condtions.")
-        logging.warning("Validation failed: Course must be Registered and  Terms and Condtions must be Accept.")
+        if data["Registered"] == "Not Registered" or data["Accepted"] == "Not Accepted" :
+            messagebox.showwarning("Validation Error", "You must Register and Accept terms and Condtions.")
+            logging.warning("Validation failed: Course must be Registered and  Terms and Condtions must be Accept.")
+            return False
+        
+    except Exception as err:
+        messagebox.showwarning("Error", f"During validation of Field {err} error encountered")
+        logging.warning(f"Validation failed for field: {err}" )
         return False
 
     return True
@@ -104,23 +111,23 @@ logging.basicConfig(
 def save_data():
     # Collect data from the form
     data = {
-        "Title": title_combobox.get(),
-        "First Name": first_name_entry.get(),
-        "Last Name": last_name_entry.get(),
-        "Gender": gender_combobox.get(),
-        "Date of Birth": dob_date.get(),
-        "Email": email_entry.get(),
-        "Phone": phone_entry.get(),
-        "Street": street_entry.get(),
-        "House No": house_no_entry.get(),
-        "Pin Code": pin_code_entry.get(),
-        "City": city_entry.get(),
-        "Course Name": course_name.get(),
-        "Subject 1": subject1_entry.get(),
-        "Subject 2": subject2_entry.get(),
-        "Subject 3": subject3_entry.get(),
-        "Registered" : registered_var.get(),
-        "Accepted" : accept_var.get()
+        "Title": title_combobox.get().strip(),
+        "First Name": first_name_entry.get().strip(),
+        "Last Name": last_name_entry.get().strip(),
+        "Gender": gender_combobox.get().strip(),
+        "Date of Birth": dob_date.get().strip(),
+        "Email": email_entry.get().strip(),
+        "Phone": phone_entry.get().strip(),
+        "Street": street_entry.get().strip(),
+        "House No": house_no_entry.get().strip(),
+        "Pin Code": pin_code_entry.get().strip(),
+        "City": city_entry.get().strip(),
+        "Course Name": course_name.get().strip(),
+        "Subject 1": subject1_entry.get().strip(),
+        "Subject 2": subject2_entry.get().strip(),
+        "Subject 3": subject3_entry.get().strip(),
+        "Registered" : registered_var.get().strip(),
+        "Accepted" : accept_var.get().strip()
     }
 
     # Validate data
@@ -230,8 +237,8 @@ def save_to_postgres(data):
         logging.info("Database connection closed.")
 
 def retrieve_data():
-    first_name = first_name_entry.get()
-    last_name = last_name_entry.get()
+    first_name = first_name_entry.get().strip()
+    last_name = last_name_entry.get().strip()
 
     if not first_name or not last_name:
         messagebox.showwarning("Input Error", "First Name and Last Name must be provided to retrieve data.")
@@ -307,21 +314,23 @@ def retrieve_data():
 def update_data():
     # Collect data from the form
     data = {
-        "Title": title_combobox.get(),
-        "First Name": first_name_entry.get(),
-        "Last Name": last_name_entry.get(),
-        "Gender": gender_combobox.get(),
-        "Date of Birth": dob_date.get(),
-        "Email": email_entry.get(),
-        "Phone": phone_entry.get(),
-        "Street": street_entry.get(),
-        "House No": house_no_entry.get(),
-        "Pin Code": pin_code_entry.get(),
-        "City": city_entry.get(),
-        "Course Name": course_name.get(),
-        "Subject 1": subject1_entry.get(),
-        "Subject 2": subject2_entry.get(),
-        "Subject 3": subject3_entry.get()
+        "Title": title_combobox.get().strip(),
+        "First Name": first_name_entry.get().strip(),
+        "Last Name": last_name_entry.get().strip(),
+        "Gender": gender_combobox.get().strip(),
+        "Date of Birth": dob_date.get().strip(),
+        "Email": email_entry.get().strip(),
+        "Phone": phone_entry.get().strip(),
+        "Street": street_entry.get().strip(),
+        "House No": house_no_entry.get().strip(),
+        "Pin Code": pin_code_entry.get().strip(),
+        "City": city_entry.get().strip(),
+        "Course Name": course_name.get().strip(),
+        "Subject 1": subject1_entry.get().strip(),
+        "Subject 2": subject2_entry.get().strip(),
+        "Subject 3": subject3_entry.get().strip(),
+        "Registered" : registered_var.get().strip(),
+        "Accepted" : accept_var.get().strip()
     }
 
     # Validate data
