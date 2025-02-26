@@ -691,6 +691,8 @@ retrieve_button.grid(row=0, column=25)
 close_button = tk.Button(action_frame, text="Close", command=root_window.quit)
 close_button.grid(row=0,column=30)
 
+
+
 for widget in action_frame.winfo_children():
     widget.grid(padx=20,pady=20)
 
